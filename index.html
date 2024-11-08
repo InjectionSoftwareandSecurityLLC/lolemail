@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost on Lemans @ The Loft 2024</title>
+  <!-- Link to Google Fonts for Faculty Glyphic -->
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* General body background with an image */
+    body {
+      background-color: rgb(38, 48, 61); /* Dark Charcoal */
+      background-image: url('flyer.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center center;
+      color: rgb(237, 224, 203); /* Cream */
+      font-family: 'Faculty Glyphic', sans-serif; /* Apply Faculty Glyphic font */
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Full-height container and centering */
+    .container {
+      height: 100vh; /* Full height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically center */
+      align-items: center; /* Horizontally center */
+    }
+
+    /* Center and limit form width, and ensure it's a bit taller */
+    .form-container {
+      min-width: 500px; /* Keep the width from before */
+      max-width: 500px;
+      min-height: 250px; /* Make the form longer */
+      background-color: rgb(237, 224, 203); /* Cream */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      opacity: 0.9; /* Slight transparency to let background show through */
+    }
+
+    /* Header styles */
+    h2, h3 {
+      color: white; /* White text for titles */
+      font-family: 'Faculty Glyphic', sans-serif; /* Title uses Faculty Glyphic */
+    }
+
+    /* Form fields and labels */
+    .form-group label {
+      color: rgb(57, 72, 96); /* Navy Blue */
+    }
+
+    .form-control {
+      background-color: white; /* Cream */
+      border: 1px solid rgb(192, 192, 192); /* Light Gray */
+      color: rgb(38, 48, 61); /* Dark Charcoal */
+    }
+
+    .form-control:focus {
+      border-color: rgb(196, 114, 62); /* Burnt Orange */
+      box-shadow: 0 0 5px rgb(196, 114, 62); /* Burnt Orange */
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background-color: rgb(196, 114, 62); /* Burnt Orange */
+      border-color: rgb(196, 114, 62); /* Burnt Orange */
+    }
+
+    .btn-primary:hover {
+      background-color: rgb(157, 92, 50); /* Darker Burnt Orange */
+      border-color: rgb(157, 92, 50); /* Darker Burnt Orange */
+    }
+
+    .btn-secondary {
+      background-color: rgb(57, 72, 96); /* Navy Blue */
+      border-color: rgb(57, 72, 96); /* Navy Blue */
+      color: rgb(237, 224, 203); /* Cream */
+    }
+
+    .btn-secondary:hover {
+      background-color: rgb(38, 48, 61); /* Dark Charcoal */
+      border-color: rgb(38, 48, 61); /* Dark Charcoal */
+      color: rgb(237, 224, 203); /* Cream */
+    }
+
+    /* Full width buttons */
+    .btn-block {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center mb-4">Lost on Lemans</h2>
+    <h3 class="text-center mb-4">Black Friday @ The Loft</h3>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 form-container">
+        <form 
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScNNLU9O8pyvk161CB9NaABACql56DEOI0q7zU4nNrj74VxCw/formResponse" 
+          method="POST" 
+          target="_self" 
+          id="mG61Hd" 
+          jsmodel="TOfxwf Q91hve CEkLOc" 
+          data-shuffle-seed="-6736159047651430251" 
+          data-clean-viewform-url="https://docs.google.com/forms/d/e/1FAIpQLScNNLU9O8pyvk161CB9NaABACql56DEOI0q7zU4nNrj74VxCw/viewform?usp=send_form" 
+          data-response="%.@.]" 
+          data-dlp-data="%.@.null,false]" 
+          data-first-entry="0" 
+          data-last-entry="1" 
+          data-is-first-page="true"
+          onsubmit="handleFormSubmission(event)"
+        >
+          <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input type="email" class="form-control" id="emailAddress" name="entry.319595370" placeholder="Enter your email" required>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block mb-2">Enter Email - Buy Tickets!</button>
+          <br/>
+          <button type="button" class="btn btn-secondary btn-block" onclick="handleNoThanks()">No thanks, just take me to tickets...</button>        
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      const form = document.getElementById('mG61Hd');
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(response => {
+        window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+      });
+    }
+
+    function handleNoThanks(){
+        window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/"
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
