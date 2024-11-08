@@ -30,11 +30,11 @@
       align-items: center; /* Horizontally center */
     }
 
-    /* Center and limit form width, and ensure it's a bit taller */
+    /* Center and limit form width, ensure it is longer horizontally */
     .form-container {
-      min-width: 500px; /* Keep the width from before */
-      max-width: 500px;
-      min-height: 250px; /* Make the form longer */
+      width: 700px; /* Increase width to make the form longer horizontally */
+      max-width: 700px; /* Maximum width */
+      min-height: 250px; /* Keep the height as before */
       background-color: rgb(237, 224, 203); /* Cream */
       padding: 30px;
       border-radius: 10px;
@@ -46,6 +46,14 @@
     h2, h3 {
       color: white; /* White text for titles */
       font-family: 'Faculty Glyphic', sans-serif; /* Title uses Faculty Glyphic */
+      text-align: center;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7); /* Black border effect */
+      border: 4px solid grey; /* Light Gray */
+      padding: 10px;
+      margin: 0 0 10px 0; /* Space below the header */
+      opacity: 0.9;
+      background: rgb(237, 224, 203); /* Cream */
+
     }
 
     /* Form fields and labels */
@@ -54,7 +62,7 @@
     }
 
     .form-control {
-      background-color: white; /* Cream */
+      background-color: white; /* Light Cream for input */
       border: 1px solid rgb(192, 192, 192); /* Light Gray */
       color: rgb(38, 48, 61); /* Dark Charcoal */
     }
@@ -91,12 +99,24 @@
     .btn-block {
       width: 100%;
     }
+
+    /* Ensure the form adjusts well on smaller screens */
+    @media (max-width: 576px) {
+      .form-container {
+        padding: 20px; /* Add some padding for small screens */
+        width: 100%; /* Ensure it takes full width on small screens */
+      }
+
+      h2, h3 {
+        font-size: 1.5rem; /* Smaller font size for headers on small screens */
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2 class="text-center mb-4">Lost on Lemans</h2>
-    <h3 class="text-center mb-4">Black Friday @ The Loft</h3>
+    <h2 class="mb-4">Lost on Lemans</h2>
+    <h3 class="mb-4">Black Friday @ The Loft</h3>
     
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 form-container">
