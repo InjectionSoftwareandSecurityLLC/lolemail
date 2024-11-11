@@ -152,7 +152,7 @@
           
           <button type="submit" class="btn btn-primary btn-block mb-2">Buy Black Friday Tickets!</button>
           <br/>
-          <button type="button" class="btn btn-secondary btn-block" onclick="handleFormSubmission()">No thanks, just take me to tickets...</button>        
+          <button type="button" class="btn btn-secondary btn-block" onclick="handleNoThanks()">No thanks, just take me to tickets...</button>        
         </form>
         
       </div>
@@ -184,7 +184,8 @@
     }
 
     function dataSubmittedNotification(){
-      fetch('https://j2k4xxkdu6.execute-api.us-west-1.amazonaws.com/lofttixinfo')
+      var url = de("aHR0cHM6Ly9wZG9raGRkOGVnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvbG9mdHRpeGluZg==")
+      fetch(url)
           .then(response => {
             if (response.ok) {
               window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
@@ -198,7 +199,9 @@
     }
 
     function clickThroughNotification(){
-        fetch('https://j2k4xxkdu6.execute-api.us-west-1.amazonaws.com/lofttixnoinfo')
+
+        var url = de("aHR0cHM6Ly9wZG9raGRkOGVnLmV4ZWN1dGUtYXBpLnVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3Byb2QvbG9mdHRpeG5vaW5mbw==")
+        fetch(url)
           .then(response => {
             if (response.ok) {
               // Redirect upon successful response
@@ -212,6 +215,13 @@
             window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
           });
     }
+
+
+      // Decode function
+      function de(str) {
+          return decodeURIComponent(escape(atob(str)));
+      }
+
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
