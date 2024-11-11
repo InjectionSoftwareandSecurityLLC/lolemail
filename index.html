@@ -152,7 +152,7 @@
           
           <button type="submit" class="btn btn-primary btn-block mb-2">Buy Black Friday Tickets!</button>
           <br/>
-          <button type="button" class="btn btn-secondary btn-block" onclick="handleNoThanks()">No thanks, just take me to tickets...</button>        
+          <button type="button" class="btn btn-secondary btn-block" onclick="handleFormSubmission()">No thanks, just take me to tickets...</button>        
         </form>
         
       </div>
@@ -171,7 +171,7 @@
         mode: 'no-cors'
       })
       .then(response => {
-        window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+        dataSubmittedNotification()
       })
       .catch(error => {
         console.error('Form submission error:', error);
@@ -179,7 +179,38 @@
     }
 
     function handleNoThanks(){
-        window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/"
+        clickThroughNotification()
+
+    }
+
+    function dataSubmittedNotification(){
+      fetch('https://j2k4xxkdu6.execute-api.us-west-1.amazonaws.com/lofttixinfo')
+          .then(response => {
+            if (response.ok) {
+              window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+            } else {
+              window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+            }
+          })
+          .catch(error => {
+            window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+          });
+    }
+
+    function clickThroughNotification(){
+        fetch('https://j2k4xxkdu6.execute-api.us-west-1.amazonaws.com/lofttixnoinfo')
+          .then(response => {
+            if (response.ok) {
+              // Redirect upon successful response
+              window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+            } else {
+              // Handle error if response is not successful
+              window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+            }
+          })
+          .catch(error => {
+            window.location.href = "https://www.theloft.com/event/lost-on-lemans-1129/";
+          });
     }
   </script>
 
